@@ -67,7 +67,7 @@ public class Minmax {
 				for (TreeStructure<BoardSquare[][]> boardSquares3 : boardSquares2.getChildren()) {
 					
 					possibleMoves move = new possibleMoves(boardSquares3.getData(), boardSize);
-					move.calculateResult2();
+					move.calculateResult();
 					if(move.getResult()>max){
 						max=move.getResult();
 						bestMove.clear();
@@ -75,7 +75,6 @@ public class Minmax {
 						
 					}
 					else if(move.getResult()==max && !bestMove.contains(boardSquares1.getData())){
-						//System.out.println(bestMove.size());
 						bestMove.add(boardSquares1.getData());
 					}
 				}
