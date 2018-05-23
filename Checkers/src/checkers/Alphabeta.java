@@ -52,6 +52,8 @@ public class Alphabeta {
 		/**
 		 * depth=3
 		 */
+		Timer time = new Timer();
+		time.start();
 
 		if(checkerBoard.checkGameOver(b)){
 			
@@ -78,6 +80,9 @@ public class Alphabeta {
 		Random random = new Random();
 		int i = random.nextInt(bestMove.size());
 		board = copyArray(bestMove.get(i), board);
+		System.out.println();
+		time.stop();
+		time.show();
 		printBoard(board);
 		System.out.println();
 		checkerBoard.updateBoard(board);

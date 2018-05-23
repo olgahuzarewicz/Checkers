@@ -53,6 +53,9 @@ public class Minmax {
 		/**
 		 * depth=3
 		 */
+		Timer time = new Timer();
+		time.start();
+		
 		if(CheckerBoard.checkGameOver(b)){
 			
 		}
@@ -87,6 +90,9 @@ public class Minmax {
 		Random random = new Random();
 		int i = random.nextInt(bestMove.size());
 		board = copyArray(bestMove.get(i), board);
+		System.out.println();
+		time.stop();
+		time.show();
 		System.out.println();
 		printBoard(board);
 		CheckerBoard.updateBoard(board);
